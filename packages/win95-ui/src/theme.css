@@ -1,0 +1,13 @@
+/* duckdgoose token overrides. Loaded AFTER @react95/core GlobalStyle and the win95 theme. */
+
+:root {
+  /* Raster assets (wallpapers, screenshots) must stay crisp at integer scales.
+     React95 icons are SVG with crispEdges and do not need this. */
+  --dg-image-rendering: pixelated;
+  --dg-desktop-bg: #008080;
+}
+
+img,
+canvas {
+  image-rendering: var(--dg-image-rendering);
+}

@@ -1,0 +1,14 @@
+{
+  "name": "duckdgoose",
+  "private": true,
+  "version": "0.0.0",
+  "workspaces": ["packages/*", "apps/*"],
+  "scripts": {
+    "dev": "npm run dev --workspace apps/site",
+    "build": "npm run build --workspace apps/site",
+    "typecheck": "tsc -p apps/site && tsc -p packages/win95-ui"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.0"
+  }
+}
