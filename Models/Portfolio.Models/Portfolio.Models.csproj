@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>Portfolio.Models</RootNamespace>
+  </PropertyGroup>
+
+  <!-- Deliberately has no references of any kind: not to Data, not to ASP.NET, not to a NuGet
+       package. Models is the bottom of the stack, so every other project can point at it and
+       nothing here can ever point back. If a type in here ever needs a dependency to compile,
+       it is not a model. -->
+
+</Project>

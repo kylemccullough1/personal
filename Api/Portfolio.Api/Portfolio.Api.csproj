@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>Portfolio.Api</RootNamespace>
+  </PropertyGroup>
+
+  <!-- Api references Services (what it is allowed to call) and Models (what it sends over the
+       wire). It does not reference Data: an endpoint that can open a file directly will
+       eventually open one, and then the rule about where data access lives is only a comment.
+
+       Data still ends up in the build output, because Services references it. That is transitive
+       assembly loading, not permission to compile against it. -->
+  <ItemGroup>
+    <ProjectReference Include="..\..\Services\Portfolio.Services\Portfolio.Services.csproj" />
+    <ProjectReference Include="..\..\Models\Portfolio.Models\Portfolio.Models.csproj" />
+  </ItemGroup>
+
+  <!-- No reference to any other project of Kyle's. Each project this site shows lives in its own
+       repo, deploys itself, and is embedded by URL rather than compiled in. See
+       notes/personal/research/07-architecture.md. -->
+
+  <!-- The App folder next to this one is the React front end. It is deliberately not part of any
+       .csproj: it is built by Vite, not MSBuild. That is why it does not appear in Rider's
+       Solution view unless "Show All Files" is on. -->
+
+  <!-- Update, not Include: the Web SDK already globs **/*.json into Content, so Include would add
+       appsettings.json a second time and fail the build with NETSDK1022. -->
+  <ItemGroup>
+    <Content Update="appsettings*.json" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,16 @@
+<Solution>
+  <!-- Folders mirror the folders on disk, so the solution view and Explorer agree.
+       Dependency direction is strictly downward: Api -> Services -> Data -> Models. -->
+  <Folder Name="/Api/">
+    <Project Path="Api/Portfolio.Api/Portfolio.Api.csproj" />
+  </Folder>
+  <Folder Name="/Services/">
+    <Project Path="Services/Portfolio.Services/Portfolio.Services.csproj" />
+  </Folder>
+  <Folder Name="/Data/">
+    <Project Path="Data/Portfolio.Data/Portfolio.Data.csproj" />
+  </Folder>
+  <Folder Name="/Models/">
+    <Project Path="Models/Portfolio.Models/Portfolio.Models.csproj" />
+  </Folder>
+</Solution>
