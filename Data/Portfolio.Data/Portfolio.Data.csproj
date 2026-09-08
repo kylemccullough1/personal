@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>Portfolio.Data</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Models\Portfolio.Models\Portfolio.Models.csproj" />
+  </ItemGroup>
+
+  <!-- Abstractions only, never the full Microsoft.Extensions.* implementations. This project
+       needs to register itself with a container; it has no business choosing which container
+       the host uses. Logging.Abstractions comes back when something in here logs. -->
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="10.0.0" />
+  </ItemGroup>
+
+</Project>

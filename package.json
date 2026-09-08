@@ -2,11 +2,13 @@
   "name": "duckdgoose",
   "private": true,
   "version": "0.0.0",
-  "workspaces": ["packages/*", "apps/*"],
+  "workspaces": ["Packages/*", "Api/App"],
   "scripts": {
-    "dev": "npm run dev --workspace apps/site",
-    "build": "npm run build --workspace apps/site",
-    "typecheck": "tsc -p apps/site && tsc -p packages/win95-ui"
+    "dev": "npm run dev --workspace Api/App",
+    "build": "npm run build --workspace Api/App",
+    "typecheck": "tsc -p Api/App && tsc -p Packages/win95-ui",
+    "api": "dotnet run --project Api/Portfolio.Api",
+    "api:build": "dotnet build Portfolio.slnx"
   },
   "devDependencies": {
     "typescript": "^5.7.0"

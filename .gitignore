@@ -20,3 +20,10 @@ Thumbs.db
 .vs/
 .vscode/
 .idea/
+
+# .NET
+bin/
+obj/
+*.user
+# Runtime data written by the API's JSON store (trip.json, backups, photos, keys)
+App_Data/
